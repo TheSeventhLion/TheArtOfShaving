@@ -20,9 +20,17 @@
 
 }
 
+.title{
+    font-size:25px;
+    padding-bottom: 10px;
+}
+
 
 .subtitle{
     color: black;
+    font-family: 'Oswald', sans-serif;
+    font-size:18px;
+    padding-bottom:15px;
 }
 .footer-left {
     display: flex;
@@ -32,27 +40,28 @@
 .footer-linklist {
     float: left;
     width: calc(100% / 3);
-    background: yellow;
+    // background: yellow;
 
 }
 .listlink-box {
     width:60%;
-    background: darkkhaki;
+    // background: darkkhaki;
 
 }
 
 .mailing-list {
     padding-left:100px;
     float:left;
-    background:grey;
     width:40%;
-    border-left: solid yellowgreen;
+    border-left:1px solid black 
+                                            //how do i shrink the border line?
 }
 
 .newsletter{
-    float: right;
-    margin: auto;
+    float: left;
+    margin: 0 auto;
     width:auto;
+
 }
 
 .bottom-footer{
@@ -61,12 +70,18 @@
 }
 
 
+
+
 .submit{
     background-color:black;
     color:white;
     border:1px solid black;
-    font-family: "";
-    margin:10px;
+    font-family: "Oswald"; 
+    margin-top:15px;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+
 
 }
 
@@ -78,9 +93,10 @@
 
 
 .email{
+    font-family: helvetica bold;
     border:1px solid black;
     height: 30px;
-    width: 70%;
+    width: 90%;
     text-align: center;
     background:transparent;
 
@@ -99,10 +115,6 @@
 
     margin-top: 31px;
 
-    .subtitle {
-    }
-    .social{
-    }
 }
 
 
@@ -111,7 +123,7 @@
     width: 40px; 
     background-size: contain;
     background-position:center;
-    background-color:greenyellow;
+    // background-color:greenyellow;
     float: left;
     border-radius:50%;
 }

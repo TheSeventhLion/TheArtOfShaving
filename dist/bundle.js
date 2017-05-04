@@ -19,6 +19,9 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
 });
 'use strict';
 
+angular.module('TAOS').service('mainService', function ($http) {});
+'use strict';
+
 angular.module('TAOS').directive('footerDir', function () {
 
     return {
@@ -37,7 +40,4 @@ angular.module('TAOS').directive('headerDir', function () {
 
     };
 });
-'use strict';
-
-angular.module('TAOS').service('mainService', function ($http) {});
 //# sourceMappingURL=bundle.js.map
