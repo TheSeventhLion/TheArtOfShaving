@@ -1,6 +1,7 @@
 *{
     list-style: none;
     text-decoration: none;
+    font-family: 'Oswald', sans-serif;
 }
 
 
@@ -14,21 +15,49 @@
     background-repeat: no-repeat;
     height:1500px;
     width:100%;
+    border:1px solid yellowgreen
 
 }
 
-.breathe-deep{
-    background-image: url("./images/home/BGimg.JPG");
-    background-position: center;
-    background-size: cover;
-    width:100%;
-    background-repeat: no-repeat;
-    height:465px;
+
+
+// .breathe-deep{
+//     background-image: url("./images/home/BGimg.JPG");
+//     background-position: center;
+//     background-size: cover;
+//     width:100%;
+//     background-repeat: no-repeat;
+//     height:465px;
+//     border:1px solid yellowgreen;
+// }
+
+.first{
+        width: 100%;
 }
 
+.shop-now-btn{
+    height:50px;
+    width: 140px;
+    
+}
+
+.img{
+    position:relative;
+
+    .img-content{
+        position:absolute;
+        top: 30%;
+        right: 10%;}
+
+        .big-title{
+            font-size:80px;
+            font-family: 'Oswald', sans-serif;}
+    
+        .subtitle{
+            font-family: 'Montserrat', sans-serif;}
 
 
-
+}
 
 
 

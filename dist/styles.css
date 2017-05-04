@@ -126,7 +126,7 @@
         display: flex;
         justify-content: space-between; }
     .nav-container .right .searchbar {
-      width: 60%;
+      width: 75%;
       margin-right: 40px;
       display: flex;
       align-items: center; }
@@ -154,18 +154,31 @@
 
 * {
   list-style: none;
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif; }
 
 .background {
   background-image: url("./images/home/MainBG.jpg");
   background-repeat: no-repeat;
   height: 1500px;
+  width: 100%;
+  border: 1px solid yellowgreen; }
+
+.first {
   width: 100%; }
 
-.breathe-deep {
-  background-image: url("./images/home/BGimg.JPG");
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  background-repeat: no-repeat;
-  height: 465px; }
+.shop-now-btn {
+  height: 50px;
+  width: 140px; }
+
+.img {
+  position: relative; }
+  .img .img-content {
+    position: absolute;
+    top: 30%;
+    right: 10%; }
+  .img .big-title {
+    font-size: 80px;
+    font-family: 'Oswald', sans-serif; }
+  .img .subtitle {
+    font-family: 'Montserrat', sans-serif; }
