@@ -1,0 +1,141 @@
+.main-footer{
+    width: 100%;
+    margin:0 auto;
+    max-width: 1260px;
+    text-align:left;
+    display:flex;
+    flex-direction: column;
+
+
+    ul {
+        padding: 0;
+    }   
+
+}
+
+.upper-footer{
+    width:100%;
+
+
+
+}
+
+
+.subtitle{
+    color: black;
+}
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-linklist {
+    float: left;
+    width: calc(100% / 3);
+    background: yellow;
+
+}
+.listlink-box {
+    width:60%;
+    background: darkkhaki;
+
+}
+
+.mailing-list {
+    padding-left:100px;
+    float:left;
+    background:grey;
+    width:40%;
+    border-left: solid yellowgreen;
+}
+
+.newsletter{
+    float: right;
+    margin: auto;
+    width:auto;
+}
+
+.bottom-footer{
+    clear:left;
+    text-align: center;
+}
+
+
+.submit{
+    background-color:black;
+    color:white;
+    border:1px solid black;
+    font-family: "";
+    margin:10px;
+
+}
+
+.submit:hover{
+    background-color:white;
+    color:black;
+
+}
+
+
+.email{
+    border:1px solid black;
+    height: 30px;
+    width: 70%;
+    text-align: center;
+    background:transparent;
+
+}
+.social {
+    display:flex;
+
+
+
+    li{
+        margin: 0 6px;
+    }
+}
+
+.social-buttons{
+
+    margin-top: 31px;
+
+    .subtitle {
+    }
+    .social{
+    }
+}
+
+
+.twitter, .facebook, .instagram, .youtube{
+    height: 40px;
+    width: 40px; 
+    background-size: contain;
+    background-position:center;
+    background-color:greenyellow;
+    float: left;
+    border-radius:50%;
+}
+
+.twitter {
+    background: url('./images/icons/twitter.png') no-repeat center;
+    background-size:40px 40px;
+}
+.facebook{
+    background: url('./images/icons/fb.png') no-repeat center;
+    background-size:40px 40px;
+
+}
+.instagram{
+    background: url('./images/icons/insta.png') no-repeat center;
+    background-size:40px 40px;
+        
+}
+.youtube{
+    background: url('./images/icons/youtube.png') no-repeat center;
+    background-size:40px 40px;
+}
+
+
+
+
+

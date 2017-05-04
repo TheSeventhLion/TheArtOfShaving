@@ -1,0 +1,27 @@
+{
+  "name": "no-server2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSeventhLion/NoServerProject_2.git"
+  },
+  "author": "Chuck D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheSeventhLion/NoServerProject_2/issues"
+  },
+  "homepage": "https://github.com/TheSeventhLion/NoServerProject_2#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.5.1"
+  }
+}
