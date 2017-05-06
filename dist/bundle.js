@@ -1,25 +1,12 @@
 'use strict';
 
-angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
-
-    $urlRouterProvider.otherwise('/');
-
-    $stateProvider.state('home', {
-        url: '/',
-        templateUrl: 'views/home.html'
-        //controller: 'homeCtrl'
-    }).state('shaving', {
-        url: '/shaving',
-        templateUrl: 'views/shaving/shaving.html',
-        controller: 'shavingCtrl'
-    });
-
-    // })
-
-});
+angular.module('TAOS').controller('homeCtrl', function (homeSVC, $scope) {});
 'use strict';
 
-angular.module('TAOS').service('mainService', function ($http) {});
+angular.module('TAOS').controller('shavingCtrl', function (shavingSVC, productSVC, $scope) {
+
+    $scope.products = productSVC.get_all_products();
+});
 'use strict';
 
 angular.module('TAOS').directive('footerDir', function () {

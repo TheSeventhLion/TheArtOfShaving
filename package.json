@@ -1,27 +1,32 @@
 {
-  "name": "no-server2",
+  "name": "TheArtOfShavingClone",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal Project",
   "main": "gulpfile.js",
+  "dependencies": {
+    "body-passer": "^1.0.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "massive": "^2.6.0",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheSeventhLion/NoServerProject_2.git"
+    "url": "git+https://github.com/TheSeventhLion/TheArtOfShaving.git"
   },
-  "author": "Chuck D",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TheSeventhLion/NoServerProject_2/issues"
+    "url": "https://github.com/TheSeventhLion/TheArtOfShaving/issues"
   },
-  "homepage": "https://github.com/TheSeventhLion/NoServerProject_2#readme",
-  "dependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.5.1"
-  }
+  "homepage": "https://github.com/TheSeventhLion/TheArtOfShaving#readme"
 }

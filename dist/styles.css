@@ -102,52 +102,56 @@
   background: url("./images/icons/youtube.png") no-repeat center;
   background-size: 40px 40px; }
 
+.full-nav-bar {
+  width: 100%; }
+
+.top-buffer {
+  height: 145px; }
+
 .wrapper {
-  background-image: url(""); }
-
-.nav-container {
-  display: flex;
-  flex-wrap: row;
-  justify-content: space-around;
-  height: 80px;
-  width: 80%;
-  margin: auto;
-  align-items: center; }
-  .nav-container .logo {
-    height: 85px;
-    position: absolute;
-    top: 0;
-    left: 20%; }
-  .nav-container .right {
-    width: 60%;
+  background: #F2F2F2;
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+  .wrapper .nav-container {
     display: flex;
-    flex-direction: row; }
-    .nav-container .right .welcome-box {
+    flex-wrap: row;
+    justify-content: space-between;
+    height: 80px;
+    width: 65%;
+    margin: auto;
+    align-items: center; }
+    .wrapper .nav-container .logo {
+      height: 100%; }
+      .wrapper .nav-container .logo img {
+        height: 100%;
+        width: auto; }
+    .wrapper .nav-container .right {
+      width: 60%;
       display: flex;
-      flex-direction: column;
-      width: 90%;
-      font-size: 18px; }
-      .nav-container .right .welcome-box .top {
-        font-size: 24px; }
-      .nav-container .right .welcome-box .bottom {
+      flex-direction: row; }
+      .wrapper .nav-container .right .welcome-box {
         display: flex;
-        justify-content: space-between; }
-    .nav-container .right .searchbar {
-      width: 75%;
-      margin-right: 40px;
-      display: flex;
-      align-items: center; }
-      .nav-container .right .searchbar .searchbox {
-        width: 100%;
-        height: 40px; }
-
-.logo {
-  height: 100%;
-  width: auto; }
+        flex-direction: column;
+        width: 50%;
+        font-size: 18px; }
+        .wrapper .nav-container .right .welcome-box .top {
+          font-size: 30px; }
+        .wrapper .nav-container .right .welcome-box .bottom {
+          display: flex;
+          justify-content: space-between; }
+      .wrapper .nav-container .right .searchbar {
+        width: 45%;
+        display: flex;
+        align-items: center; }
+        .wrapper .nav-container .right .searchbar .searchbox {
+          width: 70%;
+          height: 40px; }
 
 .navBar {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  background: white; }
   .navBar .nav-menu {
     display: flex;
     justify-content: space-between; }
@@ -162,11 +166,13 @@
   font-family: 'Oswald', sans-serif; }
 
 .background {
-  background-image: url("./images/home/MainBG.jpg");
-  background-repeat: no-repeat;
-  height: 1500px;
-  width: 100%;
-  border: 1px solid yellowgreen; }
+  position: relative;
+  width: 100%; }
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 20%; }
 
 .shop-now-btn {
   height: 50px;
@@ -231,7 +237,9 @@
   height: 460px; }
 
 .third {
-  left: 160px; }
+  position: relative;
+  left: 15px;
+  top: 75px; }
 
 .img3-content {
   position: absolute;
@@ -244,3 +252,25 @@
 
 .subtitle {
   font-family: 'Montserrat', sans-serif; }
+
+.shaving-kit-body {
+  width: 65%;
+  margin: auto; }
+  .shaving-kit-body .top-buffer {
+    margin-top: 200px; }
+  .shaving-kit-body .mainIMG {
+    display: flex;
+    justify-content: center;
+    width: 100%; }
+    .shaving-kit-body .mainIMG img {
+      width: 100%;
+      height: auto; }
+
+.tile {
+  margin-background: yellow; }
+
+.product-tile h4 {
+  margin-top: 30px; }
+
+body {
+  background: white; }
