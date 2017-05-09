@@ -1,5 +1,5 @@
-angular.module('TAOS', ['ui.router'])
-    .config(function($stateProvider, $urlRouterProvider){
+angular.module('TAOS', ['ui.router', 'angular-stripe'])
+    .config(function($stateProvider, $urlRouterProvider, stripeProvider){
 
 
     $urlRouterProvider.otherwise('/');
@@ -16,6 +16,12 @@ angular.module('TAOS', ['ui.router'])
                 templateUrl: 'views/shaving/shaving-kits.html',
                 controller: 'shavingCtrl'
             });
+
+
+
+
+
+
             
 
 
