@@ -8,13 +8,13 @@ var Auth0Strategy = require('passport-auth0');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 // var stripe = require('stripe')(config.STRIPE_KEYS.secretKey);
-var port = 3000;
+var port = 7777;
 
 const app = module.exports = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('./public'))
+app.use(express.static('./dist'));
 app.use(session({
     resave: true,
     saveUninitialized: true,
@@ -33,7 +33,7 @@ app.set('db', massiveServer);
 
 
 var db = app.get('db');
-var mainDBCtrl = require('./mainDBCtrl')
+var mainDBCtrl = require('./mainDBCtrl');
 var dbSetup = require('./db-setup');
 dbSetup.run();
 ////////////////////////////////////////////////
@@ -65,6 +65,7 @@ app.use(passport.session());
 
 
 //////////// PRODUCTS ENDPOINTS  ////////////
+app.get('/api/products' , mainDBCtrl.getProducts )
 // app.get('/api/store/fullkits',    shavingCTRL.fullkits);
 // app.get('/api/store/midkits',     shavingCTRL.midkits);
 // app.get('/api/store/starterkits', shavingCTRL.starterkits);
@@ -87,7 +88,7 @@ app.get('/api/store/:type' , mainDBCtrl.get_all_products_by_type);
 
 
 
-app.listen(3000, function (){
+app.listen(port, function (){
     console.log('Initiate the Death Star on port' , port);
 });
 

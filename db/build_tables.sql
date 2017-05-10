@@ -2,7 +2,7 @@ create table if not exists products (
     id SERIAL primary key,
     img VARCHAR(50),
     name TEXT,
-price INTEGER,
+    price INTEGER,
     type TEXT,
     aroma TEXT,
     size TEXT, 

@@ -6,11 +6,11 @@ const sourcemap = require('gulp-sourcemaps');
 
 
 var paths = {
-  jsSource: ['js/**/*.js'],
-  scssSource: ['css/**/*.scss']
+  jsSource: ['./public/js/**/*.js'],
+  scssSource: ['./public/css/**/*.scss']
 };
 
-gulp.task('js', function() {
+gulp.task('js', () => {
   return gulp.src(paths.jsSource)
   .pipe(sourcemap.init())
   .pipe(babel({
@@ -28,27 +28,29 @@ gulp.task('scss-bundle', () => {
   .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('images', function() {
-  gulp.src('./images/**/*')
+gulp.task('images', () => {
+  gulp.src('./public/images/**/*')
   .pipe(gulp.dest('./dist/images'));
 });
 
-gulp.task('views', function() {
-  gulp.src('./views/*.html')
+gulp.task('views', () => {
+  gulp.src('./public/views/**/*.html')
   .pipe(gulp.dest('./dist/views'));
 });
 
-gulp.task('build',['js','scss-bundle','images','views'], function() {
-  gulp.src('./index.html')
+gulp.task('build',['js','scss-bundle','images','views'], () => {
+  return gulp.src('./public/index.html')
   .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch(paths.jsSource, ['js']);
   gulp.watch(paths.scssSource, ['scss-bundle']);
+  gulp.watch('./public/index.html');
+  gulp.watch('./public/views/*.html');
 });
 
 
-//this makes it so you dont have to type all of the task names after "gulp"
-gulp.task('default', [ 'js', 'scss-bundle', 'images', 'views', 'watch' ]);
+//when "gulp" is input into terminal the tasks below will run ("build" "watch)"
+gulp.task('default', [ 'build', 'watch' ]);
 

@@ -10,8 +10,13 @@ module.exports = {
             res.status(200).send(response);
 
         });
-    }
+    },
 
+    getProducts : function (req , res ){
+        db.product.get_products( function (err , response ) {
+            res.status(200).send(response);
+        });
+    }
     
 
 

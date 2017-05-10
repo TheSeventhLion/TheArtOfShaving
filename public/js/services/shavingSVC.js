@@ -3,16 +3,17 @@ angular.module('TAOS')
         
 
 //I dont understand how this works
-this.getProducts = function(){
-    return $http.get('baseURL' + 'shavingkits')
-        .then(function( response ) {
-            return response;
-        });
+this.getProducts = function(type){
+    console.log(type);
+    
+
+
+    // return $http.get('/api/store/' + type)
+    //     .then(function( response ) {
+    //         return response;
+    //     });
 };
-console.log('stuff');
-
-
-
+// console.log(response);
 
 
 

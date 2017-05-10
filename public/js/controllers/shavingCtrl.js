@@ -4,14 +4,24 @@ angular.module('TAOS')
 
 
 
-// $scope.products = productSVC.get_all_products();
-
-$scope.getProducts = function(){
-    shavingSVC.getProducts().then(response => {
-        $scope.products = response;
+$scope.get_all_products = () => {
+    productSVC.get_all_products().then(function (response) {
+        console.log(response);
+        
     });
 };
 
+
+
+
+$scope.getProducts = () => {
+    productSVC.getProducts().then(function (response){
+        console.log(response);
+        $scope.products = response.data;
+    });
+};
+
+$scope.getProducts();
 
 
 

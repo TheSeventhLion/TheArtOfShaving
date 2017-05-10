@@ -114,15 +114,15 @@
 
 .img3 {
     position:relative;
-    background:silver;
+    background:darkgray;
     height: 460px;
+    opacity: 90%;
 
 }
     
 .third{
     position:relative;
-    left:15px;
-    top:75px;
+    height: 100%;
 
 }
 //how do i make the 3rd img move right and down?
@@ -135,12 +135,15 @@
     }
 
     .big-title{
-        font-size:80px;
+        font-size:70px;
         font-family: 'Oswald', sans-serif;
         }
 
         .subtitle{
             font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+
+
             }
 
 

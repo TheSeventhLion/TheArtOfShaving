@@ -1,5 +1,5 @@
-angular.module('TAOS', ['ui.router', 'angular-stripe'])
-    .config(function($stateProvider, $urlRouterProvider, stripeProvider){
+angular.module('TAOS', ['ui.router'])
+    .config(function($stateProvider, $urlRouterProvider){
 
 
     $urlRouterProvider.otherwise('/');
