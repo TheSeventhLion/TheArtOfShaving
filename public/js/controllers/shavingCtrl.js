@@ -1,27 +1,40 @@
 angular.module('TAOS')
-    .controller('shavingCtrl', function(shavingSVC, productSVC, $scope){
+    .controller('shavingCtrl', function(shavingSVC, productSVC, $scope, $stateParams){
 
+        $scope.kits = false;
+        $scope.razors = false;
+        $scope.brushes = false;
 
-
-
-$scope.get_all_products = () => {
-    productSVC.get_all_products().then(function (response) {
-        console.log(response);
-        
-    });
-};
-
-
-
+console.log('params', $stateParams);
 
 $scope.getProducts = () => {
-    productSVC.getProducts().then(function (response){
+    productSVC.getProducts($stateParams.type).then(function (response){
         console.log(response);
         $scope.products = response.data;
+        $scope[$stateParams.type] = true;
     });
 };
-
 $scope.getProducts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

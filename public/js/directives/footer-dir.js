@@ -7,10 +7,7 @@ return {
     templateUrl: "../views/footerDir.html"
 
 
-
-
-
-    }
+    };
 
 
 
@@ -20,4 +17,4 @@ return {
 
 
 
-})
+});

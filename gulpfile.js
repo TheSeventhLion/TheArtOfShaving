@@ -34,7 +34,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('views', () => {
-  gulp.src('./public/views/**/*.html')
+  gulp.src('./public/views/**/*')
   .pipe(gulp.dest('./dist/views'));
 });
 
@@ -46,8 +46,8 @@ gulp.task('build',['js','scss-bundle','images','views'], () => {
 gulp.task('watch', () => {
   gulp.watch(paths.jsSource, ['js']);
   gulp.watch(paths.scssSource, ['scss-bundle']);
-  gulp.watch('./public/index.html');
-  gulp.watch('./public/views/*.html');
+  gulp.watch('./public/index.html' , ['views'] );
+  gulp.watch('./public/views/**/*' , ['views']);
 });
 
 

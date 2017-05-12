@@ -1,2 +1,3 @@
 SELECT * FROM products
-WHERE type = $1
+WHERE category = $1
+ORDER BY type ASC

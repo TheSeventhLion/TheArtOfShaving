@@ -27,7 +27,7 @@ app.use(session({
 ////////////  MASSIVE AND DB SETUP ////////////
 const massiveUri = config.massive_URI;
 const massiveServer = massive.connectSync({
-    connectionString: massiveUri
+                      connectionString: massiveUri
 });
 app.set('db', massiveServer);
 
@@ -35,16 +35,12 @@ app.set('db', massiveServer);
 var db = app.get('db');
 var mainDBCtrl = require('./mainDBCtrl');
 var dbSetup = require('./db-setup');
+
 dbSetup.run();
 ////////////////////////////////////////////////
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-
-
-
 
 //////////////////////////// ENDPOINTS/////////////////////////////////////////////
 
@@ -57,7 +53,9 @@ app.use(passport.session());
 
 
 //////////// ORDER ENDPOINTS  ////////////
-
+// app.post('/api/store/addcartitem' , cartCTRL.additem );
+// app.delete('/api/store/removecartitem' , cartCtrl.removeitem );
+// app.get('/api/store/getcartitems' , cartCTRL.getitems );
 
 
 
@@ -65,12 +63,14 @@ app.use(passport.session());
 
 
 //////////// PRODUCTS ENDPOINTS  ////////////
-app.get('/api/products' , mainDBCtrl.getProducts )
+app.get('/api/products' , mainDBCtrl.getProducts);
+app.get('/api/products/:type' , mainDBCtrl.get_all_products_by_type);
+
+
 // app.get('/api/store/fullkits',    shavingCTRL.fullkits);
 // app.get('/api/store/midkits',     shavingCTRL.midkits);
 // app.get('/api/store/starterkits', shavingCTRL.starterkits);
 // app.get('/api/store/:id',         shavingCTRL.getProductDetails);
-app.get('/api/store/:type' , mainDBCtrl.get_all_products_by_type);
 
 
 
@@ -91,6 +91,9 @@ app.get('/api/store/:type' , mainDBCtrl.get_all_products_by_type);
 app.listen(port, function (){
     console.log('Initiate the Death Star on port' , port);
 });
+
+
+
 
 
 

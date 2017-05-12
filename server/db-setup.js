@@ -14,7 +14,7 @@ module.exports = {
     console.log('Initializing Database');
 
     db.build_tables(function(err, table) {
-      if (err) return console.log('Error loading tables', err);
+      if (err) return console.log('Error loading tables - file: .db-setup.js:17', err);
       else console.log('Tables loaded');
     });
   }

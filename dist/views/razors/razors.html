@@ -1,0 +1,104 @@
+<div class="razors-body">
+
+    <button type="submit" class="buy-item-now-btn">BUY NOW</button>
+
+
+
+<!---------------------------------------------------------------------------------------------------------------->
+<div class="content-wrapper">
+
+
+        <div class="left-content">
+
+                <div class="browse-menu">
+                        <ul> Browse
+                                <li>Shaving Kits</li>
+                                <li>Pre-Shave</li>
+                                <li>Shaving Cream</li>
+                                <li>Shaving Soap</li>
+                                <li>After-Shave</li>
+                                <li></li>
+                                <li></li>
+
+                        </ul>
+
+                <div class="price-menu">
+                        <ul> Price
+                                
+                                <li>$26 - $50</li>
+                                <li>$51 - $75</li>
+                                <li>$76 - $100</li>
+                                <li>$101 - $150</li>
+                                <li>$151 - $200</li>
+                                <li>$201 +</li>
+                        </ul>
+                </div>
+
+                <div class="product-type-menu">
+                        <ul> Product Type                                
+                                <li>Kits</li>
+                                <li>Razor Sets</li>
+                                <li>Shaving Kits</li>
+                        </ul>
+                </div>
+
+                <div class="aroma-menu">
+                        <ul> Aroma
+                                <li>Sandelwood</li>
+                                <li>Lavender</li>
+                                <li>Ocean Kelp</li>
+                                <li>Lemon</li>
+                                <li>Unsecented</li>
+                                <li>Ecalyptus</li>
+                        </ul>
+                </div>
+
+
+                <div class="brush-grade-menu">
+                        <ul>Brush Grade
+                                
+                                <li>Genuine</li>
+                                <li>Pure</li>
+                                <li>Fine</li>
+                                <li>Silvertip</li>
+                                <li>Authentic</li>
+                        </ul>
+                </div>
+
+                <div class="size-menu">
+                        <ul>Size
+                                
+                                <li>Carry On</li>
+                                <li>Starter</li>
+                                <li>Mid Size</li>
+                                <li>Full Size</li>
+                        </ul>
+                </div>
+
+                </div>
+
+        </div>
+
+<!---------------------------------------------------------------------------------------------------------------->
+    <div class="right-content">
+
+        <div class="razor-tile col-md-3" ng-repeat="razors in products">
+            <img class= "razors-img" ng-src="{{razors.img}}">
+            <h4>{{razors.name}}</h4>
+            <p>${{razors.price}}.00</p>
+            <button type="submit" class="buy-item-now-btn">{{razors.price}}</button>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!---------------------------------------------------------------------------------------------------------------->
+
+
+</div>
+

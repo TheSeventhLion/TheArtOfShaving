@@ -1,0 +1,15 @@
+.buy-now-btn{
+    height:50px;
+    width: 140px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.5s;
+    background:black;
+    color:whitesmoke;
+    border: none;
+
+}
+
+    .buy-now-btn:hover {
+        background-color: whitesmoke;
+        color:black;
+    }

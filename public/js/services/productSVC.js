@@ -15,14 +15,16 @@ this.get_all_products = () => {
     //this is where the http req's will go
 };
 
-this.getProducts = () => {
+
+this.getProducts = (type) => {
+
     return $http({
         method : 'GET',
-        url : '/api/products'
+        url : `/api/products/${type}` 
     }).then( function (response){
-            return response 
-    })
-}
+            return response; 
+    });
+};
 
 
 

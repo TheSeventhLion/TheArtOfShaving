@@ -1,29 +1,101 @@
 <div class="shaving-kit-body">
 
         <div class="mainIMG">
-                <img src="../images/shaving-kits/mainIMG.jpg">
+                <img src="../images/shaving-kits/mainIMG.jpg" ng-model="kits" ng-if="kits">
+                <img src="../images/razors/" ng-model="razors" ng-if="razors">
+                <img src="../images/brushes/" ng-model="brushes" ng-if="brushes">
         </div>
 
-        <!-------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<div class="content-wrapper">
 
 
-        <div class="right-content">
+        <div class="left-content">
 
-                <div class = "product-tile col-md-4" ng-repeat="product in products">
-                        <img ng-src="{{product.img}}">
-                        <h4>{{product.name}}</h4>
-                        <p>{{product.price}}</p>
+                <div class="browse-menu">
+                        <ul> Browse
+                                <li>Shaving Kits</li>
+                                <li>Pre-Shave</li>
+                                <li>Shaving Cream</li>
+                                <li>Shaving Soap</li>
+                                <li>After-Shave</li>
+                                <li></li>
+                                <li></li>
+
+                        </ul>
+
+                <div class="price-menu">
+                        <ul> Price
+                                
+                                <li>$26 - $50</li>
+                                <li>$51 - $75</li>
+                                <li>$76 - $100</li>
+                                <li>$101 - $150</li>
+                                <li>$151 - $200</li>
+                                <li>$201 +</li>
+                        </ul>
+                </div>
+
+                <div class="product-type-menu">
+                        <ul> Product Type                                
+                                <li>Kits</li>
+                                <li>Razor Sets</li>
+                                <li>Shaving Kits</li>
+                        </ul>
+                </div>
+
+                <div class="aroma-menu">
+                        <ul> Aroma
+                                <li>Sandelwood</li>
+                                <li>Lavender</li>
+                                <li>Ocean Kelp</li>
+                                <li>Lemon</li>
+                                <li>Unsecented</li>
+                                <li>Ecalyptus</li>
+                        </ul>
                 </div>
 
 
+                <div class="brush-grade-menu">
+                        <ul>Brush Grade
+                                
+                                <li>Genuine</li>
+                                <li>Pure</li>
+                                <li>Fine</li>
+                                <li>Silvertip</li>
+                                <li>Authentic</li>
+                        </ul>
+                </div>
 
+                <div class="size-menu">
+                        <ul>Size
+                                
+                                <li>Carry On</li>
+                                <li>Starter</li>
+                                <li>Mid Size</li>
+                                <li>Full Size</li>
+                        </ul>
+                </div>
 
-
-
-
+                </div>
 
         </div>
 
+<!---------------------------------------------------------------------------------------------------------------->
+<!--do i need to classify my img h4 & p tags?-->
+
+                <div class="right-content">
+
+                        <div class="product-tile" ng-repeat="product in products">
+                                <img class= "kit-img" ng-src="{{product.img}}">
+                                <h4>{{product.name}}</h4>
+                                <p>${{product.price}}.00</p>
+                        <button type="submit" class="buy-item-now-btn">${{product.price}}.00</button>
+                        </div>
+
+
+
+<!---------------------------------------------------------------------------------------------------------------->
 
 
 
@@ -33,38 +105,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </div>
+        </div>
 </div>
