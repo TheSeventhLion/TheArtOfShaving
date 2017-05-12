@@ -1051,7 +1051,104 @@ create table if not exists product_in_order (
 
 
 
+-- /////////////////////////////////////////////////BRUSHES/////////////////////////////////////////////////////////////////////////////////////
+
+-- insert into products (img, name,  price , type, aroma, size, brush_grade, detail, features)
+-- VALUES 
+
+-- ('./images/brushes/brush1.PNG', 
+-- 'Lexington Collection Fine Shaving Brush',  
+-- 150, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
 
 
+-- ('./images/brushes/brush2.PNG', 
+-- 'Black Fine Shaving Brush',  
+-- 120, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
+
+
+-- ('./images/brushes/brush3.PNG', 
+-- 'Ivory Fine Shaving Brush',  
+-- 120, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
+
+
+-- ('./images/brushes/brush4.PNG', 
+-- 'Horn Fine Shaving Brush',  
+-- 185, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
+
+
+-- ('./images/brushes/brush5.PNG', 
+-- 'Rose Gold Fine Shaving Brush',  
+-- 175, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
+
+
+-- ('./images/brushes/brush6.PNG', 
+-- 'Chelsea Collection Shaving Brush',  
+-- 175, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
+
+
+-- ('./images/brushes/brush7.PNG', 
+-- 'Power Shave Collection Fine Shaving Brush',  
+-- 175, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'detail', 
+-- 'features'),
+
+
+-- ('./images/brushes/brush8.PNG', 
+-- 'Fusion® Chrome Collection Fine Shaving Brush',  
+-- 160, 
+-- 'brush', 
+-- 'NULL', 
+-- 'NULL', 
+-- 'Fine', 
+-- 'The Chrome Collection Fine Shaving Brush is an essential key to achieving The Perfect Shave®. Elegantly handcrafted in polished chrome, this
+-- stylish brush features a micro-textured surface that enhances grip. This shaving brush generates a rich warm lather by retaining warm water to
+-- help soften the beard hair. Using a shaving brush to apply your shaving cream helps lift beard hair for a clean, close shave. A shaving brush
+-- also lightly exfoliates skin to help release trapped hairs.', 
+-- 'Fine Badger Hair handmade by an artisan, featuring soft white tips
+-- Has greater hair density than a pure shaving brush
+-- Chrome plated over aluminum alloy, micro-textured handle')
+
+
+-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
