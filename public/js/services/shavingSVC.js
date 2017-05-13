@@ -3,8 +3,8 @@ angular.module('TAOS')
         
 
 //I dont understand how this works
-this.getProducts = function(type){
-    console.log(type);
+// this.getProducts = function(type){
+//     console.log(type);
     
 
 
@@ -12,7 +12,7 @@ this.getProducts = function(type){
     //     .then(function( response ) {
     //         return response;
     //     });
-};
+// };
 // console.log(response);
 
 

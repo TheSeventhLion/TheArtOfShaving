@@ -8,7 +8,7 @@ var Auth0Strategy = require('passport-auth0');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 // var stripe = require('stripe')(config.STRIPE_KEYS.secretKey);
-var port = 7777;
+var port = 7000;
 
 const app = module.exports = express();
 

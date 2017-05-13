@@ -1,7 +1,7 @@
 <div class="shaving-kit-body">
 
-        <div class="mainIMG">
-                <img src="../images/shaving-kits/mainIMG.jpg" ng-model="kits" ng-if="kits">
+        <div class="banner">
+                <img src="../images/shaving-kits/banner.jpg" ng-model="kits" ng-if="kits">
                 <img src="../images/razors/banner.jpg" ng-model="razors" ng-if="razors">
                 <img src="../images/brushes/banner.jpg" ng-model="brushes" ng-if="brushes" style = "height: 300px;">
         </div>
@@ -88,9 +88,12 @@
 
                         <div class="product-tile" ng-repeat="product in products">
                                 <img class= "kit-img" ng-src="{{product.img}}">
+                        <div class  = "text-box">
+                                        
                                 <h4>{{product.name}}</h4>
                                 <p>${{product.price}}.00</p>
-                        <button type="submit" class="buy-item-now-btn">${{product.price}}.00</button>
+                        </div>
+                        <button type="submit" class="buy-item-now-btn">ADD TO CART</button>
                         </div>
 
 

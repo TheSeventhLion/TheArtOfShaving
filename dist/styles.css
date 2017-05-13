@@ -275,11 +275,12 @@
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .shaving-kit-body .mainIMG {
+  .shaving-kit-body .banner {
     display: flex;
     justify-content: center;
-    width: 100%; }
-    .shaving-kit-body .mainIMG img {
+    width: 100%;
+    height: auto; }
+    .shaving-kit-body .banner img {
       width: 100%; }
   .shaving-kit-body .content-wrapper {
     display: flex;
@@ -300,17 +301,20 @@
   .product-tile .kit-img {
     display: flex;
     align-items: center; }
-  .product-tile h4 {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    justify-content: center;
-    font-size: 15px;
-    text-align: center;
-    width: 80%; }
-  .product-tile p {
-    display: flex;
-    justify-content: center; }
+  .product-tile .text-box {
+    height: 25%; }
+    .product-tile .text-box h4 {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      justify-content: center;
+      font-size: 18px;
+      text-align: center;
+      width: 100%; }
+    .product-tile .text-box p {
+      font-size: 16px;
+      display: flex;
+      justify-content: center; }
 
 .buy-item-now-btn {
   height: 50px;

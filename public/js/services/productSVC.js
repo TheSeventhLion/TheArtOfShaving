@@ -1,5 +1,3 @@
-//Anything involving in product data 
-
 angular.module('TAOS')
     .service('productSVC', function($http){
         
@@ -8,12 +6,12 @@ angular.module('TAOS')
 
 
 // -------------------------SERVICE FUNCTIONS------------------------------------------------------
+                                    // I dont think this does anything
+// this.get_all_products = () => {
+//     return products;
 
-this.get_all_products = () => {
-    return products;
-
-    //this is where the http req's will go
-};
+//     //this is where the http req's will go
+// };
 
 
 this.getProducts = (type) => {

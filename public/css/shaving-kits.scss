@@ -7,10 +7,11 @@
     align-items: center;
 
 
-    .mainIMG{
+    .banner{
         display: flex;
         justify-content: center;
         width:100%;
+        height:auto;
 
         img{
             width:100%;
@@ -48,25 +49,31 @@
 
     }
 
+    .text-box{
+        height:25%;
 
-    h4{
-        // background: yellow;
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
-        justify-content: center;
-        font-size:15px;
-        text-align:center;
-        width: 80%;
+
+
+        h4{
+            // background: yellow;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            justify-content: center;
+            font-size:18px;
+            text-align:center;
+            width: 100%;
+
+            }
+
+        p{
+            // background: red;
+            font-size:16px;
+            display: flex;
+            justify-content: center;
+        
         }
-
-    p{
-        // background: red;
-        display: flex;
-        justify-content: center;
-    
     }
-
 
 }
 

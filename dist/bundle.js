@@ -10,24 +10,19 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
         controller: 'homeCtrl'
     }).state('products', {
         url: '/products/:type',
-        templateUrl: 'views/shaving/shaving-kits.html',
+        templateUrl: 'views/product-catalog.html',
         controller: 'shavingCtrl'
 
         // /:price/:aroma/:brush/:size
 
-        // })
-
-
-        // .state('razors', {
-        //     url: '/razors',
-        //     templateUrl: 'views/razors/razors.html',
-        //     controller: 'razorsCtrl'
-        // })          
-
-        // .state('brushes', {
-        //     url: '/brushes',
-        //     templateUrl: 'views/brushes/brushes.html',
-        //     controller: 'razorsCtrl'
+    }).state('razors', {
+        url: '/razors',
+        templateUrl: 'views/razors/razors.html',
+        controller: 'razorsCtrl'
+    }).state('brushes', {
+        url: '/brushes',
+        templateUrl: 'views/brushes/brushes.html',
+        controller: 'razorsCtrl'
     });
 });
 "use strict";
@@ -68,6 +63,33 @@ angular.module('TAOS').controller('shavingCtrl', function (shavingSVC, productSV
     };
     $scope.getProducts();
 });
+// angular.module('TAOS')
+//     .controller('testCTRL', function ($scope, $log) {
+
+
+//   $scope.items = [
+//     'The first choice!',
+//     'And another choice for you.',
+//     'but wait! A third!'
+//   ];
+
+//   $scope.status = {
+//     isopen: false
+//   };
+
+//   $scope.toggled = function(open) {
+//     $log.log('Dropdown is now: ', open);
+//   };
+
+//   $scope.toggleDropdown = function($event) {
+//     $event.preventDefault();
+//     $event.stopPropagation();
+//     $scope.status.isopen = !$scope.status.isopen;
+//   };
+
+//   $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
+// });
+"use strict";
 'use strict';
 
 angular.module('TAOS').directive('footerDir', function () {
@@ -94,17 +116,16 @@ angular.module('TAOS').directive('headerDir', function () {
 angular.module('TAOS').service('homeSVC', function ($http) {});
 'use strict';
 
-//Anything involving in product data 
-
 angular.module('TAOS').service('productSVC', function ($http) {
 
     // -------------------------SERVICE FUNCTIONS------------------------------------------------------
+    // I dont think this does anything
+    // this.get_all_products = () => {
+    //     return products;
 
-    this.get_all_products = function () {
-        return products;
+    //     //this is where the http req's will go
+    // };
 
-        //this is where the http req's will go
-    };
 
     this.getProducts = function (type) {
 
@@ -125,15 +146,17 @@ angular.module('TAOS').service('productSVC', function ($http) {
 angular.module('TAOS').service('shavingSVC', function ($http) {
 
     //I dont understand how this works
-    this.getProducts = function (type) {
-        console.log(type);
+    // this.getProducts = function(type){
+    //     console.log(type);
 
-        // return $http.get('/api/store/' + type)
-        //     .then(function( response ) {
-        //         return response;
-        //     });
-    };
+
+    // return $http.get('/api/store/' + type)
+    //     .then(function( response ) {
+    //         return response;
+    //     });
+    // };
     // console.log(response);
+
 
 });
 //# sourceMappingURL=bundle.js.map

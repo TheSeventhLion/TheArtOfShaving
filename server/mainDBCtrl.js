@@ -22,31 +22,25 @@ module.exports = {
 
 
 // console.log(type);
-
-        db.product.get_all_products_by_type( [type] , function(err , response){
+    db.product.get_all_products_by_type ( [type] , ( err , response ) =>{
 // console.log("CTRL line 25" , response);
             res.status(200).send(response);
-
         });
     },
 
-
-    getProducts : function (req , res ){
-        db.product.get_products( function ( err , response ) {
+    getProducts :  (req , res ) => {
+        db.product.get_products( ( err , response ) => {
             res.status(200).send(response);
         });
     },
-
-
 
     getRazors : function (req , res) {
-        db.product.get_products( function ( err , response ) {
+        db.product.get_products(  ( err , response )  => {
             res.status(200).send(response);
         });
     },
 
 
-    
     getBrushes : function (req , res) {
         db.product.get_products( function ( err , response ) {
             res.status(200).send(response);
