@@ -7,7 +7,7 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
     $stateProvider.state('home', {
         url: '/',
         templateUrl: 'views/home.html',
-        controller: 'homeCtrl'
+        controller: 'shavingCtrl.js'
     }).state('products', {
         url: '/products/:type',
         templateUrl: 'views/product-catalog.html',
@@ -22,9 +22,12 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
     }).state('brushes', {
         url: '/brushes',
         templateUrl: 'views/brushes/brushes.html',
-        controller: 'razorsCtrl'
+        controller: 'brushesCtrl'
     });
 });
+'use strict';
+
+angular.module('TAOS').controller('productCtrl', function (productSVC, $scope) {});
 'use strict';
 
 angular.module('TAOS').controller('razorsCtrl', function (razorsSVC, productSVC, $scope) {
@@ -56,6 +59,33 @@ angular.module('TAOS').controller('shavingCtrl', function (shavingSVC, productSV
     };
     $scope.getProducts();
 });
+// angular.module('TAOS')
+//     .controller('testCTRL', function ($scope, $log) {
+
+
+//   $scope.items = [
+//     'The first choice!',
+//     'And another choice for you.',
+//     'but wait! A third!'
+//   ];
+
+//   $scope.status = {
+//     isopen: false
+//   };
+
+//   $scope.toggled = function(open) {
+//     $log.log('Dropdown is now: ', open);
+//   };
+
+//   $scope.toggleDropdown = function($event) {
+//     $event.preventDefault();
+//     $event.stopPropagation();
+//     $scope.status.isopen = !$scope.status.isopen;
+//   };
+
+//   $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
+// });
+"use strict";
 'use strict';
 
 angular.module('TAOS').directive('footerDir', function () {
@@ -100,6 +130,25 @@ angular.module('TAOS').service('productSVC', function ($http) {
     };
 
     // ------------------------------------------------------------------------------------------------
+
+});
+"use strict";
+'use strict';
+
+angular.module('TAOS').service('shavingSVC', function ($http) {
+
+    //I dont understand how this works
+    // this.getProducts = function(type){
+    //     console.log(type);
+
+
+    // return $http.get('/api/store/' + type)
+    //     .then(function( response ) {
+    //         return response;
+    //     });
+    // };
+    // console.log(response);
+
 
 });
 //# sourceMappingURL=bundle.js.map

@@ -8,7 +8,7 @@ angular.module('TAOS', ['ui.router'])
             .state('home', {
                 url: '/',
                 templateUrl: 'views/home.html',
-                controller: 'homeCtrl'
+                controller: 'shavingCtrl.js'
             })
             
             .state('products', {
@@ -30,7 +30,7 @@ angular.module('TAOS', ['ui.router'])
             .state('brushes', {
                 url: '/brushes',
                 templateUrl: 'views/brushes/brushes.html',
-                controller: 'razorsCtrl'
+                controller: 'brushesCtrl'
         });
             
 
