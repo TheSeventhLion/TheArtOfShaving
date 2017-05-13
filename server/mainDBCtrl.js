@@ -22,7 +22,7 @@ module.exports = {
 
 
 // console.log(type);
-    db.product.get_all_products_by_type ( [type] , ( err , response ) =>{
+    db.product.get_all_products_by_type ( [type] , ( err , response ) => {
 // console.log("CTRL line 25" , response);
             res.status(200).send(response);
         });

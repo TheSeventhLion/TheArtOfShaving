@@ -279,7 +279,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: auto; }
+    height: auto;
+    height: 300px; }
     .shaving-kit-body .banner img {
       width: 100%; }
   .shaving-kit-body .content-wrapper {
