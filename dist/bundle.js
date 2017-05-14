@@ -7,11 +7,11 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
     $stateProvider.state('home', {
         url: '/',
         templateUrl: 'views/home.html',
-        controller: 'shavingCtrl.js'
+        controller: 'productCtrl'
     }).state('products', {
         url: '/products/:type',
         templateUrl: 'views/product-catalog.html',
-        controller: 'shavingCtrl'
+        controller: 'productCtrl'
 
         // /:price/:aroma/:brush/:size
 
@@ -23,69 +23,12 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
         url: '/brushes',
         templateUrl: 'views/brushes/brushes.html',
         controller: 'brushesCtrl'
+    }).state('details', {
+        url: '/details/:id',
+        templateUrl: 'views/product-details.html',
+        controller: 'product-detailsCtrl'
     });
 });
-'use strict';
-
-angular.module('TAOS').controller('productCtrl', function (productSVC, $scope) {});
-'use strict';
-
-angular.module('TAOS').controller('razorsCtrl', function (razorsSVC, productSVC, $scope) {
-
-    $scope.getProducts = function () {
-        productSVC.getRazors().then(function (response) {
-            console.log(response);
-            $scope.products = response.data;
-        });
-    };
-    $scope.getProducts();
-});
-'use strict';
-
-angular.module('TAOS').controller('shavingCtrl', function (shavingSVC, productSVC, $scope, $stateParams) {
-
-    $scope.kits = false;
-    $scope.razors = false;
-    $scope.brushes = false;
-
-    console.log('params', $stateParams);
-
-    $scope.getProducts = function () {
-        productSVC.getProducts($stateParams.type).then(function (response) {
-            console.log(response);
-            $scope.products = response.data;
-            $scope[$stateParams.type] = true;
-        });
-    };
-    $scope.getProducts();
-});
-// angular.module('TAOS')
-//     .controller('testCTRL', function ($scope, $log) {
-
-
-//   $scope.items = [
-//     'The first choice!',
-//     'And another choice for you.',
-//     'but wait! A third!'
-//   ];
-
-//   $scope.status = {
-//     isopen: false
-//   };
-
-//   $scope.toggled = function(open) {
-//     $log.log('Dropdown is now: ', open);
-//   };
-
-//   $scope.toggleDropdown = function($event) {
-//     $event.preventDefault();
-//     $event.stopPropagation();
-//     $scope.status.isopen = !$scope.status.isopen;
-//   };
-
-//   $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
-// });
-"use strict";
 'use strict';
 
 angular.module('TAOS').directive('footerDir', function () {
@@ -105,6 +48,75 @@ angular.module('TAOS').directive('headerDir', function () {
         templateUrl: "../views/headerDir.html"
 
     };
+});
+'use strict';
+
+//doesnt have a SVC
+
+
+angular.module('TAOS').controller('product-detailsCtrl', function (productSVC, $scope, $stateParams) {
+
+    productSVC.getDetails($stateParams.id).then(function (response) {
+        $scope.product = response.data[0];
+        console.log('product', $scope.product);
+
+        // if($stateParams.id)
+
+    });
+});
+'use strict';
+
+angular.module('TAOS').controller('productCtrl', function (productSVC, $scope, $state, $stateParams) {
+
+    $scope.kits = false;
+    $scope.razors = false;
+    $scope.brushes = false;
+
+    // console.log('params', $stateParams);
+
+    $scope.getProducts = function () {
+        productSVC.getProducts($stateParams.type).then(function (response) {
+            console.log(response);
+            $scope.products = response.data;
+            $scope[$stateParams.type] = true;
+        });
+    };
+    $scope.getProducts();
+
+    $scope.addToCart = function (id, qty) {
+        productSVC.addToCart(id, qty).then(function (response) {
+            console.log('response ==>', response);
+        });
+    };
+});
+// angular.module('TAOS')
+//     .controller('razorsCtrl', function(razorsSVC, productSVC, $scope){
+
+
+//     });
+"use strict";
+'use strict';
+
+angular.module('TAOS').controller('shavingCTRL', function (shavingSVC, productSVC, $scope, $stateParams) {
+
+    //         $scope.kits = false;
+    //         $scope.razors = false;
+    //         $scope.brushes = false;
+
+    // console.log('params', $stateParams);
+
+    // $scope.getProducts = () => {
+    //     productSVC.getProducts($stateParams.type).then(function (response){
+    //         console.log(response);
+    //         $scope.products = response.data;
+    //         $scope[$stateParams.type] = true;
+    //     });
+    // };
+    // $scope.getProducts();
+
+    // cut and put into productsCTRL.js
+
+
 });
 'use strict';
 
@@ -131,6 +143,27 @@ angular.module('TAOS').service('productSVC', function ($http) {
 
     // ------------------------------------------------------------------------------------------------
 
+    this.getDetails = function (id) {
+        console.log('GetDetails', id);
+        return $http({
+            method: 'GET',
+            url: '/api/product/' + id
+        }).then(function (response) {
+            return response;
+        });
+    };
+
+    this.addToCart = function (id, qty) {
+        console.log('id,qty', id, qty);
+        return $http({
+            method: 'POST',
+            url: '/api/order/add',
+            data: {
+                product_id: id,
+                qty: qty
+            }
+        });
+    };
 });
 "use strict";
 'use strict';

@@ -46,10 +46,26 @@ module.exports = {
             res.status(200).send(response);
         });
 
-    }
+    },
 
 
+    getProductDetails : ( req , res) => {
+        console.log('getting product details');
+        console.log(req.params)
+        let id = req.params.id
+        db.product.get_product_details( [id] , function (err , product){
+            if (err) {
+                return res.status(500).send(err);
+            } else {
+                return res.send(product);
+            }
+    });
+}
 
+    // addToCart : (req , res) => {
+    //     console.log('getting product details');
+    //     console.log(req.params)
+    // }
 
 
 

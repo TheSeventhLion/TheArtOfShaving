@@ -42,6 +42,7 @@ dbSetup.run();
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 //////////////////////////// ENDPOINTS/////////////////////////////////////////////
 
 
@@ -53,11 +54,7 @@ app.use(passport.session());
 
 
 //////////// ORDER ENDPOINTS  ////////////
-// app.post('/api/store/addcartitem' , cartCTRL.additem );
-// app.delete('/api/store/removecartitem' , cartCtrl.removeitem );
-// app.get('/api/store/getcartitems' , cartCTRL.getitems );
-
-
+// app.post('/api/order/add', mainDBCtrl.addToCart);
 
 
 
@@ -65,13 +62,7 @@ app.use(passport.session());
 //////////// PRODUCTS ENDPOINTS  ////////////
 app.get('/api/products' , mainDBCtrl.getProducts);
 app.get('/api/products/:type' , mainDBCtrl.get_all_products_by_type);
-
-
-// app.get('/api/store/fullkits',    shavingCTRL.fullkits);
-// app.get('/api/store/midkits',     shavingCTRL.midkits);
-// app.get('/api/store/starterkits', shavingCTRL.starterkits);
-// app.get('/api/store/:id',         shavingCTRL.getProductDetails);
-
+app.get('/api/product/:id' , mainDBCtrl.getProductDetails);
 
 
 

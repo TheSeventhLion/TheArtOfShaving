@@ -8,18 +8,17 @@ angular.module('TAOS', ['ui.router'])
             .state('home', {
                 url: '/',
                 templateUrl: 'views/home.html',
-                controller: 'shavingCtrl.js'
+                controller: 'productCtrl'
             })
             
             .state('products', {
                 url: '/products/:type',
                 templateUrl: 'views/product-catalog.html',
-                controller: 'shavingCtrl'
+                controller: 'productCtrl'
 
 // /:price/:aroma/:brush/:size
 
             })
-
 
             .state('razors', {
                 url: '/razors',
@@ -31,9 +30,13 @@ angular.module('TAOS', ['ui.router'])
                 url: '/brushes',
                 templateUrl: 'views/brushes/brushes.html',
                 controller: 'brushesCtrl'
-        });
-            
+        })
 
+            .state('details', {
+                url: '/details/:id',
+                templateUrl: 'views/product-details.html',
+                controller: 'product-detailsCtrl'
+        });
 
 
 

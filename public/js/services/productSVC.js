@@ -24,12 +24,29 @@ this.getProducts = (type) => {
     });
 };
 
-
-
-
-
 // ------------------------------------------------------------------------------------------------
 
+this.getDetails = (id) => {
+    console.log('GetDetails', id);
+    return $http({
+        method: 'GET',
+        url: `/api/product/${id}`
+    }).then(function (response){
+        return response; 
+    });
+};
+
+this.addToCart = (id, qty) => {
+    console.log('id,qty' , id , qty);
+    return $http({
+      method: 'POST',
+      url: '/api/order/add',
+      data: {
+        product_id: id,
+        qty: qty
+      }
+    });
+  };
 
 
 
@@ -38,5 +55,3 @@ this.getProducts = (type) => {
 
 
 
-
-});
