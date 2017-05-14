@@ -31,29 +31,6 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
 });
 'use strict';
 
-angular.module('TAOS').directive('footerDir', function () {
-
-    return {
-        restrict: "AE",
-        templateUrl: "../views/footerDir.html"
-
-    };
-});
-'use strict';
-
-angular.module('TAOS').directive('headerDir', function () {
-
-    return {
-        restrict: "AE",
-        templateUrl: "../views/headerDir.html"
-
-    };
-});
-'use strict';
-
-//doesnt have a SVC
-
-
 angular.module('TAOS').controller('product-detailsCtrl', function (productSVC, $scope, $stateParams) {
 
     productSVC.getDetails($stateParams.id).then(function (response) {
@@ -62,6 +39,13 @@ angular.module('TAOS').controller('product-detailsCtrl', function (productSVC, $
 
         // if($stateParams.id)
 
+
+        $scope.addToCart = function (id, qty) {
+            productSVC.addToCart(id, qty).then(function (response) {
+                console.log('response ==>', response);
+            });
+        };
+        $scope.addToCart();
     });
 });
 'use strict';
@@ -82,12 +66,6 @@ angular.module('TAOS').controller('productCtrl', function (productSVC, $scope, $
         });
     };
     $scope.getProducts();
-
-    $scope.addToCart = function (id, qty) {
-        productSVC.addToCart(id, qty).then(function (response) {
-            console.log('response ==>', response);
-        });
-    };
 });
 // angular.module('TAOS')
 //     .controller('razorsCtrl', function(razorsSVC, productSVC, $scope){
@@ -117,6 +95,26 @@ angular.module('TAOS').controller('shavingCTRL', function (shavingSVC, productSV
     // cut and put into productsCTRL.js
 
 
+});
+'use strict';
+
+angular.module('TAOS').directive('footerDir', function () {
+
+    return {
+        restrict: "AE",
+        templateUrl: "../views/footerDir.html"
+
+    };
+});
+'use strict';
+
+angular.module('TAOS').directive('headerDir', function () {
+
+    return {
+        restrict: "AE",
+        templateUrl: "../views/headerDir.html"
+
+    };
 });
 'use strict';
 
@@ -162,6 +160,8 @@ angular.module('TAOS').service('productSVC', function ($http) {
                 product_id: id,
                 qty: qty
             }
+        }).then(function (response) {
+            return responce;
         });
     };
 });

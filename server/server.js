@@ -54,8 +54,12 @@ app.use(passport.session());
 
 
 //////////// ORDER ENDPOINTS  ////////////
+app.post('/api/order/add', mainDBCtrl.addToCart);
+// app.put('/api/order/complete', mainDBCtrl.complete);
+// app.get('/api/order', mainDBCtrl.read);
 // app.post('/api/order/add', mainDBCtrl.addToCart);
-
+// app.put('/api/order/update/:id', mainDBCtrl.updateItemInCart);
+// app.delete('/api/order/delete/:id', mainDBCtrl.deleteFromCart);
 
 
 

@@ -19,11 +19,24 @@ $scope.getProducts = () => {
 $scope.getProducts();
 
 
-$scope.addToCart = (id , qty) => {
-    productSVC.addToCart (id , qty).then(function (response){
-        console.log('response ==>' , response);
-    });
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });
+
+
+

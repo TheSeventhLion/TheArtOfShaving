@@ -45,13 +45,9 @@ this.addToCart = (id, qty) => {
         product_id: id,
         qty: qty
       }
+    }).then(function (response){
+        return responce; 
     });
   };
 
-
-
-
-
-
-
-
+    });
