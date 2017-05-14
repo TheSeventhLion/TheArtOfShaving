@@ -59,19 +59,20 @@ module.exports = {
             } else {
                 return res.send(product);
             }
-    });
+        });
 },
 
     addToCart: function(req, res, next) {
         console.log('adding product');
-        console.log(req.params);
-        console.log('req:', req, 'res', res);
+        console.log('req.params', req.params);
+        console.log('req:', req.body);
+        console.log('res:', res.data);
 
-        db.product.add_to_cart([req.user.order_id, req.body.product_id, req.body.qty], function(err, product) {
+        db.product.add_to_cart([ req.body.product_id, req.body.qty], function(err, product) {
             if (err) {
                 console.log('Add to Order err: ', err);
                 return res.status(500).send(err);
-            }
+            }0
 
             return res.status(200).send('Product added to cart');
         });

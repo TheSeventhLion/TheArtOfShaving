@@ -36,17 +36,13 @@ angular.module('TAOS').controller('product-detailsCtrl', function (productSVC, $
     productSVC.getDetails($stateParams.id).then(function (response) {
         $scope.product = response.data[0];
         console.log('product', $scope.product);
-
-        // if($stateParams.id)
-
-
-        $scope.addToCart = function (id, qty) {
-            productSVC.addToCart(id, qty).then(function (response) {
-                console.log('response ==>', response);
-            });
-        };
-        $scope.addToCart();
     });
+
+    $scope.addToCart = function (id, qty) {
+        productSVC.addToCart($scope.product.id, qty).then(function (response) {
+            console.log('response ==>', response);
+        });
+    };
 });
 'use strict';
 
@@ -152,7 +148,8 @@ angular.module('TAOS').service('productSVC', function ($http) {
     };
 
     this.addToCart = function (id, qty) {
-        console.log('id,qty', id, qty);
+        console.log('id', id);
+        // console.log('qty', qty);
         return $http({
             method: 'POST',
             url: '/api/order/add',
@@ -161,7 +158,7 @@ angular.module('TAOS').service('productSVC', function ($http) {
                 qty: qty
             }
         }).then(function (response) {
-            return responce;
+            return response;
         });
     };
 });

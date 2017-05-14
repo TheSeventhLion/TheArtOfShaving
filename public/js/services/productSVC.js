@@ -37,7 +37,8 @@ this.getDetails = (id) => {
 };
 
 this.addToCart = (id, qty) => {
-    console.log('id,qty' , id , qty);
+    console.log('id', id);
+    // console.log('qty', qty);
     return $http({
       method: 'POST',
       url: '/api/order/add',
@@ -46,7 +47,7 @@ this.addToCart = (id, qty) => {
         qty: qty
       }
     }).then(function (response){
-        return responce; 
+        return response; 
     });
   };
 
