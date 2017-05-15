@@ -68,19 +68,54 @@ module.exports = {
         console.log('req:', req.body);
         console.log('res:', res.data);
 
-        db.product.add_to_cart([ req.body.product_id, req.body.qty], function(err, product) {
+        db.product.add_to_cart([req.user.order_id, req.body.product_id], function(err, product) {
             if (err) {
                 console.log('Add to Order err: ', err);
                 return res.status(500).send(err);
-            }0
+            }
 
             return res.status(200).send('Product added to cart');
         });
-
-}
-
+    },
 
 
+        deleteItem: function(req, res, next) {
+console.log('removing product');
+console.log('req.params', req.params);
+console.log('req:', req.body);
+console.log('res:', res.data);
+            db.product.remove_from_cart([req.body.product_id, req.body.qty], function(err, product){
+            if (err) {
+                console.log('Remove Item err: ', err);
+                return res.status(500).send(err);
+            }
 
+            return res.status(200).send('Product removced from cart');
+        });
+    },
+    
+    getOrder: function(req, res, next) {
+console.log('req.user = ' , req.user);
+        db.order.read_id([req.user.order_id], function(err, order) {
+            if (err) {
+                console.log('Order read err: ', err);
+                return res.status(500).send(err);
+            }
+
+            var totalOrder = {
+                order: order[0]
+            };
+           db.order.get_products([req.user.order_id], (err, products) => {
+                if (err) {
+                    console.log('Order products read err: ', err);
+                    return res.status(500).send(err);
+                }
+
+                totalOrder.products = products;
+
+                return res.status(200).send(products);
+            });
+        })
+    }
 
 };

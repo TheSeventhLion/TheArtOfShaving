@@ -1,4 +1,4 @@
-angular.module('TAOS').controller('product-detailsCtrl', function( productSVC, $scope, $stateParams){
+angular.module('TAOS').controller('product-detailsCTRL', function( productSVC, $state,$scope, $stateParams){
 
 
 
@@ -9,11 +9,14 @@ productSVC.getDetails($stateParams.id).then(function(response){
 
 });
 
-$scope.addToCart = (id , qty) => {
-    productSVC.addToCart ($scope.product.id , qty).then(function (response){
+$scope.addToCart = (id) => {
+    productSVC.addToCart (id).then(function (response){
         console.log('response ==>' , response);
+        $state.go('cart')
     });
 };
+
+
 
 
 

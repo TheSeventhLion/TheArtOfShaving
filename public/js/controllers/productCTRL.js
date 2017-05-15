@@ -1,5 +1,5 @@
 angular.module('TAOS')
-    .controller('productCtrl', function(productSVC, $scope , $state, $stateParams){
+    .controller('productCTRL', function(productSVC, $scope , $state, $stateParams){
 
 
         $scope.kits = false;

@@ -36,7 +36,7 @@ this.getDetails = (id) => {
     });
 };
 
-this.addToCart = (id, qty) => {
+this.addToCart = (id) => {
     console.log('id', id);
     // console.log('qty', qty);
     return $http({
@@ -44,7 +44,6 @@ this.addToCart = (id, qty) => {
       url: '/api/order/add',
       data: {
         product_id: id,
-        qty: qty
       }
     }).then(function (response){
         return response; 

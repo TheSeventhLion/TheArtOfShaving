@@ -89,11 +89,14 @@
                                 <a ui-sref="details( {id: '{{product.id}}' } )"   >
 
                                 <img class= "kit-img" ng-src="{{product.img}}">
-                        <div class  = "text-box">
-                                        
+                <div class = "text-container">
+                                
+                        <div class  = "text-box">                
                                 <h4>{{product.name}}</h4>
                                 <p>${{product.price}}.00</p>
                         </div>
+                </div>
+
                                 </a>
                                 <button type="submit" class="buy-item-now-btn">ADD TO CART</button>
                         </div>
