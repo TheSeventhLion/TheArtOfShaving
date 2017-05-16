@@ -10,9 +10,9 @@ angular.module('TAOS')
     })
     .then(function(response) {
       $rootScope.$emit('user', null);
-      return response
-    })
-  }
+      return response;
+    });
+  };
   this.getCurrentUser = function() {
     return $http ({
       method: 'GET',
@@ -20,9 +20,9 @@ angular.module('TAOS')
     })
     .then(function(response) {
       $rootScope.$emit('user', response.data);
-      return response
-    })
-  }
+      return response;
+    });
+  };
   this.editUser = function(user) {
     return $http ({
       method: 'PUT',
@@ -30,7 +30,7 @@ angular.module('TAOS')
       data: user
     })
     .then(function(response) {
-      return response
-    })
-  }
+      return response;
+    });
+  };
 });

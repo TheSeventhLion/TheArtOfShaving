@@ -116,48 +116,7 @@ app.get('/api/logout', function(req, res, next) {
 var isAuthed = function(req, res, next) {
     if (!req.isAuthenticated()) return res.status(401).send();
     return next();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
 
 
 

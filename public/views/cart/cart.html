@@ -1,19 +1,20 @@
-This is the cart.html page
+<div class = "top-buffer"></div>
+<div class = "cart-title">Shopping Cart</div>
 
+<div class= "total-container">
 
-
-<div class = "title">Shopping Cart</div>
-
-<div class = "item-contatiner"> 
-<div class= "test-box">
+<div class = "item-container"> 
     
     <div class="cart-product col-md-4" ng-repeat="product in orderData">
 
         <img class="item-image" src="{{product.img}}" alt="">
-            <h3>{{product.name}}</h3>
-        <p>Total: {{product.price * product.qty | currency}}</p>
+
+            <div class = "product-name">{{product.name}}</div>
         
-        <input class="qty-btn" type="number" min="1" ng-model="product.qty" ng-change="updateItem(product.pio_id, product.qty)">
+        <div class = "total" >Total: {{product.price | currency}}</div>
+        <!--* product.qty -->
+        
+
     
         <button class="btn btn-danger btn-sm" type="button" name="button" ng-click="deleteItem(product.id)">Remove</button>
      <hr> 

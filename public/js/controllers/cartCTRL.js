@@ -1,4 +1,10 @@
-angular.module('TAOS').controller('cartCTRL', function( cartSVC, $scope, $stateParams){
+angular.module('TAOS').controller('cartCTRL', function( cartSVC, $scope, $stateParams, $rootScope){
+
+$rootScope.$on('$stateChangeSuccess', function() {
+   document.body.scrollTop = document.documentElement.scrollTop = 0;
+});
+
+////////////////////////////////////////////////////////////////////////////////
 
     $scope.getTotal = function() {
         // console.table($scope.orderData)
@@ -16,10 +22,18 @@ angular.module('TAOS').controller('cartCTRL', function( cartSVC, $scope, $stateP
             // console.table(response);
             $scope.orderData = response;
             console.log('order data', $scope.orderData);
-            $scope.getTotal();
+            // $scope.getTotal();
         });
     };
     $scope.getOrder();
+
+    $scope.deleteItem = function(id) {
+        cartSVC.deleteItem(id).then(function(response) {
+            console.log("response from cartCTRL: " , response);
+            $scope.getOrder();
+        });
+    };
+
 
     // $scope.updateItem = function(id, qty) {
     //     // console.table(id, qty);
@@ -28,12 +42,6 @@ angular.module('TAOS').controller('cartCTRL', function( cartSVC, $scope, $stateP
     //     });
     // };
 
-    $scope.deleteItem = function(id) {
-        cartSVC.deleteItem(id).then(function(response) {
-            console.log("response from cartCTRL: " , response);
-            $scope.getOrder();
-        });
-    };
 
     // $scope.submit = function() {
     //     console.log('Submiting order');

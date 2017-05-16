@@ -62,17 +62,11 @@ angular.module('TAOS', ['ui.router'])
                 controller: 'product-detailsCTRL'
         })
 
-        .state('cart', {
-            url: '/cart',
-            templateUrl: 'views/cart/cart.html',
-            controller: 'cartCTRL'
-        })
-
-        .state('login', {
-            url: '/login',
-            templateUrl: 'views/login.html'
-            // controller: ''
-        })
+            .state('cart', {
+                url: '/cart',
+                templateUrl: 'views/cart/cart.html',
+                controller: 'cartCTRL'
+        });
 
 
 

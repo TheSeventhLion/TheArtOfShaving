@@ -19,14 +19,14 @@ module.exports = {
                 type = "brush";
                 break;
         }
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////
 // console.log(type);
     db.product.get_all_products_by_type ( [type] , ( err , response ) => {
 // console.log("CTRL line 25" , response);
             res.status(200).send(response);
         });
     },
+//////////////////////////////////////////////////////////////////////////////////////////////
 
     getProducts :  (req , res ) => {
         db.product.get_products( ( err , response ) => {
@@ -34,12 +34,15 @@ module.exports = {
         });
     },
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
     getRazors : function (req , res) {
         db.product.get_products(  ( err , response )  => {
             res.status(200).send(response);
         });
     },
 
+//////////////////////////////////////////////////////////////////////////////////////////////
 
     getBrushes : function (req , res) {
         db.product.get_products( function ( err , response ) {
@@ -48,6 +51,7 @@ module.exports = {
 
     },
 
+//////////////////////////////////////////////////////////////////////////////////////////////
 
     getProductDetails : ( req , res) => {
         console.log('getting product details');
@@ -61,12 +65,14 @@ module.exports = {
             }
         });
 },
+//////////////////////////////////////////////////////////////////////////////////////////////
 
     addToCart: function(req, res, next) {
         console.log('adding product');
         console.log('req.params', req.params);
         console.log('req:', req.body);
         console.log('res:', res.data);
+        console.log('req.user' , req.user);
 
         db.product.add_to_cart([req.user.order_id, req.body.product_id], function(err, product) {
             if (err) {
@@ -78,22 +84,26 @@ module.exports = {
         });
     },
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 
         deleteItem: function(req, res, next) {
 console.log('removing product');
 console.log('req.params', req.params);
 console.log('req:', req.body);
 console.log('res:', res.data);
-            db.product.remove_from_cart([req.body.product_id, req.body.qty], function(err, product){
+            db.product.remove_from_cart([req.params.id], function(err, product){
             if (err) {
                 console.log('Remove Item err: ', err);
                 return res.status(500).send(err);
             }
-
-            return res.status(200).send('Product removced from cart');
+            console.log('removed product ', product);
+            return res.status(200).send('Product removed from cart');
         });
     },
     
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
     getOrder: function(req, res, next) {
 console.log('req.user = ' , req.user);
         db.order.read_id([req.user.order_id], function(err, order) {
@@ -119,3 +129,5 @@ console.log('req.user = ' , req.user);
     }
 
 };
+
+//////////////////////////////////////////////////////////////////////////////////////////////

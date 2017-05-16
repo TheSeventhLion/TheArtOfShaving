@@ -1,5 +1,7 @@
-angular.module('TAOS')
-    .controller('shavingCTRL', function(shavingSVC, productSVC, $scope, $stateParams){
+// angular.module('TAOS')
+//     .controller('shavingCTRL', function(shavingSVC, productSVC, $scope, $stateParams){
+
+
 
 //         $scope.kits = false;
 //         $scope.razors = false;
@@ -39,4 +41,4 @@ angular.module('TAOS')
 
 
 
-    });
+    // });

@@ -1,3 +1,5 @@
+<div class = "top-buffer"></div>
+
 <div class="shaving-kit-body">
 
         <div class="banner">
@@ -81,7 +83,7 @@
         </div>
 
 <!---------------------------------------------------------------------------------------------------------------->
-<!--do i need to classify my img h4 & p tags?-->
+
 
                 <div class="right-content">
 
@@ -89,16 +91,14 @@
                                 <a ui-sref="details( {id: '{{product.id}}' } )"   >
 
                                 <img class= "kit-img" ng-src="{{product.img}}">
-                <div class = "text-container">
                                 
-                        <div class  = "text-box">                
-                                <h4>{{product.name}}</h4>
-                                <p>${{product.price}}.00</p>
+                        <div class = "text-container">
+                                <div class = "product-name">{{product.name}}</div>
+                                <div class = "product-price">{{product.price | currency}}</div>
                         </div>
-                </div>
 
                                 </a>
-                                <button type="submit" class="buy-item-now-btn">ADD TO CART</button>
+                                <button type="submit" ng-click="addToCart(product.id)" class="buy-item-now-btn">ADD TO CART</button>
                         </div>
 
 

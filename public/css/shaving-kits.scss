@@ -1,3 +1,8 @@
+.top-buffer{
+    height:77px;
+}
+
+
 .shaving-kit-body{
 
     width:65%;
@@ -45,6 +50,12 @@
         flex-direction: column;
         align-items: center;
         width:26%;
+        height:100%;
+        
+        a{
+            text-decoration: none;
+            color:black;
+        }
 
     .kit-img{
         display:flex;
@@ -52,33 +63,30 @@
 
     }
 
-    .text-box{
-        height:25%;
 
 
 
-        h4{
-            // background: yellow;
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-            justify-content: center;
-            font-size:18px;
-            text-align:center;
-            width: 100%;
+h4{
+    // background: yellow;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    justify-content: center;
+    font-size:18px;
+    text-align:center;
+    width: 100%;
 
-            }
-
-        p{
-            // background: red;
-            font-size:16px;
-            display: flex;
-            justify-content: center;
-        
-        }
     }
 
+p{
+    // background: red;
+    font-size:16px;
+    display: flex;
+    justify-content: center;
+    color:purple;
 }
+}
+
 
 
     .buy-item-now-btn{

@@ -47,15 +47,17 @@ angular.module('TAOS', ['ui.router']).config(function ($stateProvider, $urlRoute
         url: '/cart',
         templateUrl: 'views/cart/cart.html',
         controller: 'cartCTRL'
-    }).state('login', {
-        url: '/login',
-        templateUrl: 'views/login.html'
-        // controller: ''
     });
 });
 'use strict';
 
-angular.module('TAOS').controller('cartCTRL', function (cartSVC, $scope, $stateParams) {
+angular.module('TAOS').controller('cartCTRL', function (cartSVC, $scope, $stateParams, $rootScope) {
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
+
+    ////////////////////////////////////////////////////////////////////////////////
 
     $scope.getTotal = function () {
         // console.table($scope.orderData)
@@ -73,10 +75,17 @@ angular.module('TAOS').controller('cartCTRL', function (cartSVC, $scope, $stateP
             // console.table(response);
             $scope.orderData = response;
             console.log('order data', $scope.orderData);
-            $scope.getTotal();
+            // $scope.getTotal();
         });
     };
     $scope.getOrder();
+
+    $scope.deleteItem = function (id) {
+        cartSVC.deleteItem(id).then(function (response) {
+            console.log("response from cartCTRL: ", response);
+            $scope.getOrder();
+        });
+    };
 
     // $scope.updateItem = function(id, qty) {
     //     // console.table(id, qty);
@@ -85,12 +94,6 @@ angular.module('TAOS').controller('cartCTRL', function (cartSVC, $scope, $stateP
     //     });
     // };
 
-    $scope.deleteItem = function (id) {
-        cartSVC.deleteItem(id).then(function (response) {
-            console.log("response from cartCTRL: ", response);
-            $scope.getOrder();
-        });
-    };
 
     // $scope.submit = function() {
     //     console.log('Submiting order');
@@ -102,7 +105,13 @@ angular.module('TAOS').controller('cartCTRL', function (cartSVC, $scope, $stateP
 });
 'use strict';
 
-angular.module('TAOS').controller('product-detailsCTRL', function (productSVC, $state, $scope, $stateParams) {
+angular.module('TAOS').controller('product-detailsCTRL', function (productSVC, $state, $scope, $stateParams, $rootScope) {
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
+
+    ////////////////////////////////////////////////////////////////////////////////
 
     productSVC.getDetails($stateParams.id).then(function (response) {
         $scope.product = response.data[0];
@@ -112,13 +121,19 @@ angular.module('TAOS').controller('product-detailsCTRL', function (productSVC, $
     $scope.addToCart = function (id) {
         productSVC.addToCart(id).then(function (response) {
             console.log('response ==>', response);
-            $state.go('cart');
+            // $state.go('cart')
         });
     };
 });
 'use strict';
 
-angular.module('TAOS').controller('productCTRL', function (productSVC, $scope, $state, $stateParams) {
+angular.module('TAOS').controller('productCTRL', function (productSVC, $scope, $state, $stateParams, $rootScope) {
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
+
+    ////////////////////////////////////////////////////////////////////////////////
 
     $scope.kits = false;
     $scope.razors = false;
@@ -134,6 +149,14 @@ angular.module('TAOS').controller('productCTRL', function (productSVC, $scope, $
         });
     };
     $scope.getProducts();
+
+    $scope.addToCart = function (id) {
+        productSVC.addToCart(id).then(function (response) {
+
+            console.log('response ==>', response);
+            // $state.go('cart')
+        });
+    };
 });
 // angular.module('TAOS')
 //     .controller('razorsCtrl', function(razorsSVC, productSVC, $scope){
@@ -141,29 +164,30 @@ angular.module('TAOS').controller('productCTRL', function (productSVC, $scope, $
 
 //     });
 "use strict";
-'use strict';
-
-angular.module('TAOS').controller('shavingCTRL', function (shavingSVC, productSVC, $scope, $stateParams) {
-
-    //         $scope.kits = false;
-    //         $scope.razors = false;
-    //         $scope.brushes = false;
-
-    // console.log('params', $stateParams);
-
-    // $scope.getProducts = () => {
-    //     productSVC.getProducts($stateParams.type).then(function (response){
-    //         console.log(response);
-    //         $scope.products = response.data;
-    //         $scope[$stateParams.type] = true;
-    //     });
-    // };
-    // $scope.getProducts();
-
-    // cut and put into productsCTRL.js
+// angular.module('TAOS')
+//     .controller('shavingCTRL', function(shavingSVC, productSVC, $scope, $stateParams){
 
 
-});
+//         $scope.kits = false;
+//         $scope.razors = false;
+//         $scope.brushes = false;
+
+// console.log('params', $stateParams);
+
+// $scope.getProducts = () => {
+//     productSVC.getProducts($stateParams.type).then(function (response){
+//         console.log(response);
+//         $scope.products = response.data;
+//         $scope[$stateParams.type] = true;
+//     });
+// };
+// $scope.getProducts();
+
+// cut and put into productsCTRL.js
+
+
+// });
+"use strict";
 'use strict';
 
 angular.module('TAOS').directive('footerDir', function () {
@@ -220,14 +244,7 @@ angular.module('TAOS').service('authSVC', function ($http) {
 
 angular.module('TAOS').service('cartSVC', function ($http) {
 
-  this.deleteItem = function (id) {
-    console.log("Just hit cartSVC");
-    return $http({
-      method: 'DELETE',
-      url: '/api/order/delete/' + id
-    });
-  };
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////
   this.getOrder = function () {
     return $http({
       method: 'GET',
@@ -237,6 +254,19 @@ angular.module('TAOS').service('cartSVC', function ($http) {
       return response.data;
     });
   };
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+
+  this.deleteItem = function (id) {
+    console.log("Just hit cartSVC");
+    return $http({
+      method: 'DELETE',
+      url: '/api/order/delete/' + id
+    });
+  };
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+
 });
 'use strict';
 
@@ -261,7 +291,7 @@ angular.module('TAOS').service('productSVC', function ($http) {
         });
     };
 
-    // ------------------------------------------------------------------------------------------------
+    //////////////////////////////////////////////////////////////////////////////////////////////
 
     this.getDetails = function (id) {
         console.log('GetDetails', id);
@@ -272,6 +302,8 @@ angular.module('TAOS').service('productSVC', function ($http) {
             return response;
         });
     };
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
 
     this.addToCart = function (id) {
         console.log('id', id);
